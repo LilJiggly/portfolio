@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --var-lightBlack: rgb(36, 36, 36);
+    --var-gold: gold;
+    --var-darkBlack: rgb(10, 10, 10);
+    --var-beige: beige;
+
+}
+
+html {
+  
+}
+
+body {
+  font-family: Sofia Pro;
+  font-size: 16px;
+}
+
+main {
+  /* display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-gap: 0; */
+}
+
+section:first-of-type {
+  display: flex;
+  justify-content: center;
+}
+
+article {
+  width: 55%;
+  padding-top: 3em;
+}
+
+h1 {
+  font-size: clamp(1em, 2em, 3em);
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 3vi;
+  text-transform: uppercase;
+}
+
+h3 {
+  padding-top: 1em;
+}
+
+ul {
+  list-style: none;
+  padding-bottom: 1em;
+}
+
+section {
+  flex-wrap: wrap;
+  display: flex;
+  width: 100%;
+  background-color: rgb(23, 23, 23);
+}
+
+
+
+.image-container {
+  position: relative;
+  width: 25%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  transition: 1s;
+}
+
+
+.image-container img {
+  width: auto; 
+  height: 100%;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+main .menu {
+  display: block;
+  justify-content: center;
+  position: absolute;
+  left: -15vw;
+  z-index: 100;
+  transition: 2s;
+  width: 15vw;
+  background-color: rgb(229, 229, 229);
+  top:0;
+  height: 100vh;
+}
+
+main .active {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  transform: translateX(15vw);
+  z-index: 100;
+  top:0;
+  height: 200vh;
+}
+
+main article {
+  width: 80%;
+}
+
+main h1 {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: fit-content;
+  padding: 0.5em 1em 0.5em 1em;
+  height: fit-content;
+  border-radius: 0em 0em 1em 1em;
+  background-color: white;
+  justify-self: center;
+  box-shadow: rgb(149, 149, 149) 0em 0.1em 1em;
+  transition: 1s;
+  cursor: pointer;
+}
+
+main h1:hover {
+  color: rgb(171, 171, 171);
+  text-decoration: none;
+
+}
+
+main button {
+  background-color: rgb(229, 229, 229);
+  position: fixed;
+  left: -0.1em;
+  top: 40vh;
+  z-index: 100;
+  height: fit-content;
+  width: fit-content;
+  padding: 4em 1em 4em 1em;
+  border-radius: 0em 2em 2em 0em;
+  box-shadow: none;
+  border: none;
+  box-shadow: rgb(149, 149, 149) 0.1em 0em 1em;
+  text-decoration: none;
+  transition: 2s;
+  
+}
+
+.activeButton {
+  transform: translateX(14.9vw);
+}
+
+a, a:hover, a:active, a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+main button:hover {
+  cursor: pointer;
+}
+
+main button h2 {
+  font-size: 3em;
+  opacity: 1;
+}
+
+.image-container .overlay {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  opacity: 0;
+  transition: 1s; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container:hover .overlay {
+  opacity: 0.7;
+  background-color: white;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+a:hover,
+a:active,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media screen and (max-width: 1334px) {
+  .image-container {
+    position: relative;
+    width: 33.333%;
+    aspect-ratio: 1/1;
+  }
+
+  h2 {
+    font-size: 5vi;
+    text-transform: uppercase;
+  }
+}
+
+@media screen and (max-width: 756px) {
+  .image-container {
+    position: relative;
+    width: 50%;
+    aspect-ratio: 1/1;
+  }
+
+  h2 {
+    font-size: 8vi;
+    text-transform: uppercase;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .image-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
+
+  h2 {
+    font-size: 15vi;
+    text-transform: uppercase;
+  }
+}
+
+footer {
+  height: 20vw;
+}
+
+
+
+
+
+
+
+
+
+
+/* Project page layout */
+
+.projectPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding-top: 8em;
+}
+
+.projectPage article {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.projectPage p {
+ width: 50vw;
+}
+
+
+.projectPage article img {
+  width: 95vw;
+  height: fit-content;
+  
+}
