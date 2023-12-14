@@ -11,24 +11,9 @@
 
 }
 
-html {
-  
-}
-
 body {
   font-family: Sofia Pro;
   font-size: 16px;
-}
-
-main {
-  /* display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-  grid-gap: 0; */
-}
-
-section:first-of-type {
-  display: flex;
-  justify-content: center;
 }
 
 article {
@@ -64,64 +49,36 @@ section {
   background-color: rgb(23, 23, 23);
 }
 
-
-
-.image-container {
-  position: relative;
-  width: 25%;
-  aspect-ratio: 1/1;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  transition: 1s;
-}
-
-
-.image-container img {
-  width: auto; 
-  height: 100%;
-}
-
 main {
   display: flex;
   justify-content: center;
 }
 
-main .menu {
+.menu {
+ display: none;
+}
+
+.active {
   display: block;
-  justify-content: center;
-  position: absolute;
-  left: -15vw;
-  z-index: 100;
-  transition: 2s;
-  width: 15vw;
-  background-color: rgb(229, 229, 229);
-  top:0;
+  position: fixed;
   height: 100vh;
-}
-
-main .active {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  transform: translateX(15vw);
+  width: 100vw;
   z-index: 100;
-  top:0;
-  height: 200vh;
+  background-color: black;
 }
 
-main article {
-  width: 80%;
+article {
+  width: 20vw;
 }
 
 main h1 {
   position: fixed;
-  top: 0;
+  top: 2vh;
   z-index: 100;
   width: fit-content;
   padding: 0.5em 1em 0.5em 1em;
   height: fit-content;
-  border-radius: 0em 0em 1em 1em;
+  border-radius: 1em;
   background-color: white;
   justify-self: center;
   box-shadow: rgb(149, 149, 149) 0em 0.1em 1em;
@@ -132,8 +89,8 @@ main h1 {
 main h1:hover {
   color: rgb(171, 171, 171);
   text-decoration: none;
-
 }
+
 
 main button {
   background-color: rgb(229, 229, 229);
@@ -171,14 +128,32 @@ main button h2 {
   opacity: 1;
 }
 
+/* Image container + de overlay erover heen */
+
+.image-container {
+  display: flex;
+  width: 25%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  position: relative;
+}
+
+.image-container img {
+  width: auto; 
+  height: 100%;
+}
+
 .image-container .overlay {
   position: absolute;
   top: 5%;
   left: 5%;
   width: 90%;
   height: 90%;
+
   opacity: 0;
   transition: 1s; 
+
+  /* positie van text in de overlay */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -187,12 +162,6 @@ main button h2 {
 .image-container:hover .overlay {
   opacity: 0.7;
   background-color: white;
-}
-
-article {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 
@@ -205,9 +174,7 @@ a:visited {
 
 @media screen and (max-width: 1334px) {
   .image-container {
-    position: relative;
     width: 33.333%;
-    aspect-ratio: 1/1;
   }
 
   h2 {
@@ -218,9 +185,7 @@ a:visited {
 
 @media screen and (max-width: 756px) {
   .image-container {
-    position: relative;
     width: 50%;
-    aspect-ratio: 1/1;
   }
 
   h2 {
@@ -231,9 +196,7 @@ a:visited {
 
 @media screen and (max-width: 400px) {
   .image-container {
-    position: relative;
     width: 100%;
-    aspect-ratio: 1/1;
   }
 
   h2 {
