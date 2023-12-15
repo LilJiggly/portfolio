@@ -4,22 +4,27 @@
 }
 
 :root {
-    --var-lightBlack: rgb(36, 36, 36);
-    --var-gold: gold;
-    --var-darkBlack: rgb(10, 10, 10);
-    --var-beige: beige;
+  --var-orange: rgb(255, 119, 0);
+  --var-darkGray: rgb(32, 32, 32);
 
 }
 
 body {
   font-family: Sofia Pro;
-  font-size: 16px;
+  font-size: 1em;
 }
 
-article {
-  width: 55%;
-  padding-top: 3em;
+a, a:hover, a:active, a:visited {
+  text-decoration: none;
+  color: inherit;
 }
+
+ul {
+  list-style: none;
+}
+
+/* Styling van de headers */
+/* ---------------------------------------- */
 
 h1 {
   font-size: clamp(1em, 2em, 3em);
@@ -29,46 +34,30 @@ h1 {
 }
 
 h2 {
-  font-size: 3vi;
+  font-size: 2vi;
   text-transform: uppercase;
+  text-align: center;
 }
 
 h3 {
-  padding-top: 1em;
+  font-size: 2em;
+  text-transform: uppercase;
 }
 
-ul {
-  list-style: none;
+h4 {
+  padding-top: 0.5em;
   padding-bottom: 1em;
+  color: rgb(252, 115, 65);
+  font-weight: 400;
+  font-style: italic;
 }
 
-section {
-  flex-wrap: wrap;
-  display: flex;
-  width: 100%;
-  background-color: rgb(23, 23, 23);
-}
+/* ---------------------------------------- */
+
 
 main {
   display: flex;
   justify-content: center;
-}
-
-.menu {
- display: none;
-}
-
-.active {
-  display: block;
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
-  z-index: 100;
-  background-color: black;
-}
-
-article {
-  width: 20vw;
 }
 
 main h1 {
@@ -78,7 +67,7 @@ main h1 {
   width: fit-content;
   padding: 0.5em 1em 0.5em 1em;
   height: fit-content;
-  border-radius: 1em;
+  border-radius: 10em;
   background-color: white;
   justify-self: center;
   box-shadow: rgb(149, 149, 149) 0em 0.1em 1em;
@@ -87,12 +76,11 @@ main h1 {
 }
 
 main h1:hover {
-  color: rgb(171, 171, 171);
+  color: var(--var-orange);
   text-decoration: none;
 }
 
-
-main button {
+main > button {
   background-color: rgb(229, 229, 229);
   position: fixed;
   left: -0.1em;
@@ -107,16 +95,6 @@ main button {
   box-shadow: rgb(149, 149, 149) 0.1em 0em 1em;
   text-decoration: none;
   transition: 2s;
-  
-}
-
-.activeButton {
-  transform: translateX(14.9vw);
-}
-
-a, a:hover, a:active, a:visited {
-  text-decoration: none;
-  color: inherit;
 }
 
 main button:hover {
@@ -128,7 +106,16 @@ main button h2 {
   opacity: 1;
 }
 
+section {
+  flex-wrap: wrap;
+  display: flex;
+  width: 100%;
+  background-color: rgb(23, 23, 23);
+}
+
+
 /* Image container + de overlay erover heen */
+/* ---------------------------------------- */
 
 .image-container {
   display: flex;
@@ -160,16 +147,24 @@ main button h2 {
 }
 
 .image-container:hover .overlay {
-  opacity: 0.7;
+  opacity: 0.8;
   background-color: white;
 }
 
+.overlay > h2 {
+  padding: 0em 1em;
+}
 
-a:hover,
-a:active,
-a:visited {
-  text-decoration: none;
-  color: inherit;
+/* ---------------------------------------- */
+
+
+/* Responsive mediaqueries */
+/* ---------------------------------------- */
+
+@media screen and (max-width: 2000px) {
+  .projectPage p, h3, h4 {
+    width: 30vw;
+  }
 }
 
 @media screen and (max-width: 1334px) {
@@ -178,8 +173,12 @@ a:visited {
   }
 
   h2 {
-    font-size: 5vi;
+    font-size: 3vi;
     text-transform: uppercase;
+  }
+
+  .projectPage p, h3, h4 {
+    width: 40vw;
   }
 }
 
@@ -189,8 +188,12 @@ a:visited {
   }
 
   h2 {
-    font-size: 8vi;
+    font-size: 5vi;
     text-transform: uppercase;
+  }
+
+  .projectPage p, h3, h4 {
+    width: 70vw;
   }
 }
 
@@ -200,8 +203,12 @@ a:visited {
   }
 
   h2 {
-    font-size: 15vi;
+    font-size: 10vi;
     text-transform: uppercase;
+  }
+
+  .projectPage p, h3, h4 {
+    width: 80vw;
   }
 }
 
@@ -210,39 +217,141 @@ footer {
 }
 
 
+/* menuScreen */
 
+.menuScreen {
+  transition: 2s ease-in-out;
+  position: absolute;
+  left: -100vw;
+  position: absolute;
+  background-color: var(--var-darkGray);
+  width: 100vw;
+  height: 100vh;
+  z-index: 400;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
 
+.menuScreen h5{
+  text-align: center;
+  font-size: 5em;
+  text-transform: uppercase;
+}
 
+.menuScreenContent {
+  color: white;
+  width: 80vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+/* active class die het menu verplaats */
 
+.active {
+  left: 0;
+}
 
+/* de toggle button voor het menu */
 
+.menuButton {
+  position: fixed;
+  background-color: white;
+  height: fit-content;
+  width: fit-content;
+  right: 1vw;
+  top: 2vh;
+  z-index: 500;
+  border-radius: 11em;
+  font-size: 2em;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.5em 1em 0.5em 1em;
+  box-shadow: rgb(149, 149, 149) 0em 0.1em 1em;
+}
+
+/* ---------------------------------------- */
 
 /* Project page layout */
 
 .projectPage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background-color: white;
-  padding-top: 8em;
+  padding-top: 10em;
 }
 
 .projectPage article {
-  width: 100%;
-  overflow: hidden;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
+}
+
+.projectPage p {
+ text-align: start;
+}
+
+.projectPage h3, h4 {
+  text-align: center;
+}
+
+.buttonContainer {
+  height: 20vh;
+  width: fit-content;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.projectPage p {
- width: 50vw;
+.buttonContainer .button {
+  background-color: var(--var-orange) ;
+  z-index: 100;
+  height: fit-content;
+  width: fit-content;
+  padding: 1em;
+  border-radius: 10em;
+  box-shadow: var(--var-orange) 0em 0.1em 1em;
+  transition: 2s;
+  margin: 0em 1em;
+  color: white;
 }
 
+.buttonContainer .button:hover {
+  transform: scale(1.2);
+}
+
+.projectPage .image-container-project:first-of-type {
+  aspect-ratio: 2/1;
+  margin: 3em 0em;
+}
+ 
+.projectPage .image-container-project {
+  width: 100vw;
+  height: fit-content;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3em 0em 0em 0em;
+  background-color: var(--var-darkGray);
+}
 
 .projectPage article img {
-  width: 95vw;
+  width: 100vw;
   height: fit-content;
-  
+  box-shadow: inset inset 0px 0px 83px 43px rgb(114, 0, 0);
+}
+
+.projectPage video {
+  width: 80vw;
+  height: auto;
+}
+
+#spookyOnepager img {
+  height: auto;
+  width: 60vw;
 }
