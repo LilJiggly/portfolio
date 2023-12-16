@@ -23,6 +23,22 @@ ul {
   list-style: none;
 }
 
+ul li {
+  padding-top: 0.5em;
+  transition: 1s;
+  font-weight: 300;
+}
+
+ul li:hover {
+  color: var(--var-orange);
+}
+
+ul h6 {
+  font-weight: 700;
+  font-size: 1.5em;
+  padding-top: 1em;
+}
+
 /* Styling van de headers */
 /* ---------------------------------------- */
 
@@ -123,9 +139,15 @@ section {
   aspect-ratio: 1/1;
   overflow: hidden;
   position: relative;
+  justify-content: center;
 }
 
 .image-container img {
+  width: auto; 
+  height: 100%;
+}
+
+.image-container video {
   width: auto; 
   height: 100%;
 }
@@ -340,10 +362,9 @@ footer {
   background-color: var(--var-darkGray);
 }
 
-.projectPage article img {
+.projectPage article .image-container-project img {
   width: 100vw;
   height: fit-content;
-  box-shadow: inset inset 0px 0px 83px 43px rgb(114, 0, 0);
 }
 
 .projectPage video {
@@ -351,7 +372,29 @@ footer {
   height: auto;
 }
 
-#spookyOnepager img {
+#spookyOnepager, #BeeldtaalPoster {
   height: auto;
   width: 60vw;
+}
+
+#afstuderen {
+  width: 100vw;
+}
+
+embed, iframe {
+  width: 80vw;
+  height: 80vh;
+}
+
+iframe {
+  width: 80vw;
+  height: 80vh;
+}
+
+.image-container-project-afstuderen {
+  display: flex;
+}
+
+.image-container-project-afstuderen embed {
+  width: 33vw;
 }
