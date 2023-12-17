@@ -11,6 +11,7 @@
 
 html {
   scroll-behavior: smooth;
+  font-family: sofia-pro, sans-serif;
 }
 
 body {
@@ -252,6 +253,7 @@ section {
   aspect-ratio: 2/1;
   margin: 3em 0em;
   height: auto;
+  width: 100vw;
 }
  
 .projectPage .image-container-project {
@@ -271,7 +273,7 @@ section {
 
 .projectPage article .image-container-project img {
   width: 100vw;
-  height: fit-content;
+  height: auto;
 }
 
 .projectPage video {
@@ -284,10 +286,6 @@ section {
 #spookyOnepager, #BeeldtaalPoster {
   height: auto;
   width: 80vw;
-  
-}
-
-#spookyOnepager {
   align-self: flex-start;
 }
 
