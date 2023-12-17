@@ -132,7 +132,7 @@ main button h2 {
 section {
   flex-wrap: wrap;
   display: flex;
-  width: 100%;
+  width: 100vw;
   background-color: rgb(23, 23, 23);
 }
 
@@ -229,6 +229,7 @@ section {
 .projectPage {
   background-color: white;
   padding-top: 10em;
+  overflow: hidden;
 }
 
 .projectPage article {
@@ -264,6 +265,10 @@ section {
   background-color: var(--var-darkGray);
 }
 
+.projectPage .image-container-project:nth-of-type(2) {
+  overflow: scroll;
+}
+
 .projectPage article .image-container-project img {
   width: 100vw;
   height: fit-content;
@@ -278,7 +283,12 @@ section {
 
 #spookyOnepager, #BeeldtaalPoster {
   height: auto;
-  width: 60vw;
+  width: 80vw;
+  
+}
+
+#spookyOnepager {
+  align-self: flex-start;
 }
 
 #afstuderen {
@@ -388,7 +398,7 @@ iframe {
 /* ---------------------------------------- */
 
 footer {
-  width: 100vw;
+  width: 100%;
   height: 10vh;
   display: flex;
   justify-content: center;
@@ -445,7 +455,6 @@ footer a:hover {
   .projectPage .image-container-project {
     height: 45vh;
     width: 100%;
-    display: block;
   }
 
   .projectPage .image-container-project iframe {
@@ -496,7 +505,6 @@ footer a:hover {
   .projectPage .image-container-project {
     height: 30vh;
     width: 100%;
-    display: block;
   }
 
   .projectPage .image-container-project iframe {
