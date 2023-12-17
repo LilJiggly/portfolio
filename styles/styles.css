@@ -9,6 +9,10 @@
 
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Sofia Pro;
   font-size: 1em;
@@ -76,22 +80,25 @@ main {
   justify-content: center;
 }
 
-main h1 {
-  position: fixed;
+.homeButton {
+  position:fixed;
   top: 2vh;
-  z-index: 100;
+  z-index: 500;
   width: fit-content;
-  padding: 0.5em 1em 0.5em 1em;
   height: fit-content;
+  transition: 1s;
+}
+
+main .homeButton h1 {
+  padding: 0.5em 1em 0.5em 1em;
   border-radius: 10em;
   background-color: white;
-  justify-self: center;
   box-shadow: rgb(149, 149, 149) 0em 0.1em 1em;
-  transition: 1s;
+ 
   cursor: pointer;
 }
 
-main h1:hover {
+main .homeButton:hover {
   color: var(--var-orange);
   text-decoration: none;
 }
@@ -130,6 +137,208 @@ section {
 }
 
 
+/* menuScreen */
+
+.menuScreen {
+  transition: 2s ease-in-out;
+  position: absolute;
+  left: -100vw;
+  background-color: var(--var-darkGray);
+  width: 100vw;
+  height: 100vh;
+  z-index: 400;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.menuScreen h5{
+  padding-top: .3em;
+  text-align: center;
+  font-size: 5em;
+  text-transform: uppercase;
+}
+
+.menuScreenContent {
+  color: white;
+  width: 80vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* active class die het menu verplaats */
+
+.active {
+  left: 0;
+  position: fixed;
+}
+
+/* de toggle button voor het menu */
+
+.menuButton {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+  position: fixed;
+  background-color: white;
+  right: 1vw;
+  top: 2vh;
+  width: 1.1em;
+  height: 1.1em;
+  z-index: 500;
+  border-radius: 11em;
+  font-size: 2em;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  box-shadow: rgb(149, 149, 149) 0em 0.1em 1em;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 100%;
+    height: 30%;
+    background-color: #333;
+    margin: 0.1em 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+    transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-6px, -6px);
+    transform: rotate(45deg) translate(-6px, -6px);
+}
+
+/* ---------------------------------------- */
+
+/* Project page layout */
+
+.projectPage {
+  background-color: white;
+  padding-top: 10em;
+}
+
+.projectPage article {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
+}
+
+.projectPage p {
+ text-align: start;
+}
+
+.projectPage h3, h4 {
+  text-align: center;
+}
+
+.projectPage .image-container-project:first-of-type {
+  aspect-ratio: 2/1;
+  margin: 3em 0em;
+  height: auto;
+}
+ 
+.projectPage .image-container-project {
+  width: 100vw;
+  height: 70vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3em 0em 0em 0em;
+  background-color: var(--var-darkGray);
+}
+
+.projectPage article .image-container-project img {
+  width: 100vw;
+  height: fit-content;
+}
+
+.projectPage video {
+  width: 80vw;
+  height: auto;
+}
+
+/* ---------------------------------------- */
+
+#spookyOnepager, #BeeldtaalPoster {
+  height: auto;
+  width: 60vw;
+}
+
+#afstuderen {
+  width: 100vw;
+}
+
+embed, iframe {
+  width: 80vw;
+  height: 80vh;
+}
+
+iframe {
+  width: 80vw;
+  height: 80vh;
+}
+
+.image-container-project-afstuderen {
+  display: flex;
+}
+
+.image-container-project-afstuderen embed {
+  width: 33vw;
+}
+
+.image-container-project iframe {
+  width: 80vw; 
+  height: 100%;
+}
+
+
+/* Button container */
+/* ---------------------------------------- */
+
+.buttonContainer {
+  height: 20vh;
+  width: fit-content;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonContainer .button {
+  background-color: var(--var-orange) ;
+  z-index: 100;
+  height: fit-content;
+  width: fit-content;
+  padding: 1em;
+  border-radius: 10em;
+  box-shadow: var(--var-orange) 0em 0.1em 1em;
+  transition: 2s;
+  margin: 0em 1em;
+  color: white;
+}
+
+.buttonContainer .button:hover {
+  transform: scale(1.2);
+}
+
+
 /* Image container + de overlay erover heen */
 /* ---------------------------------------- */
 
@@ -143,11 +352,6 @@ section {
 }
 
 .image-container img {
-  width: auto; 
-  height: 100%;
-}
-
-.image-container video {
   width: auto; 
   height: 100%;
 }
@@ -178,6 +382,26 @@ section {
 }
 
 /* ---------------------------------------- */
+
+
+/* footer */
+/* ---------------------------------------- */
+
+footer {
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer a {
+  transition: 1s;
+}
+
+footer a:hover {
+  color: var(--var-orange);
+}
 
 
 /* Responsive mediaqueries */
@@ -217,6 +441,18 @@ section {
   .projectPage p, h3, h4 {
     width: 70vw;
   }
+
+  .projectPage .image-container-project {
+    height: 45vh;
+    width: 100%;
+    display: block;
+  }
+
+  .projectPage .image-container-project iframe {
+    width: 100%; 
+    height: 100%;
+  }
+
 }
 
 @media screen and (max-width: 400px) {
@@ -224,177 +460,48 @@ section {
     width: 100%;
   }
 
+  h1 {
+    font-size: 5vi;
+  }
+
+  .menuButton {
+    display: flex;
+    height: 0.06em;
+    width: 0.06em;
+  }
+
+  .bar1,
+  .bar2,
+  .bar3 {
+    width: 10em;
+    height: 1em;
+    background-color: #333;
+    margin-top: 0.01em;
+    transition: 0.4s;
+  }
+
   h2 {
     font-size: 10vi;
     text-transform: uppercase;
   }
 
+  .projectPage {
+    padding-top: 5em;
+  }
+
   .projectPage p, h3, h4 {
     width: 80vw;
   }
-}
 
-footer {
-  height: 20vw;
-}
+  .projectPage .image-container-project {
+    height: 30vh;
+    width: 100%;
+    display: block;
+  }
 
+  .projectPage .image-container-project iframe {
+    width: 100%; 
+    height: 100%;
+  }
 
-/* menuScreen */
-
-.menuScreen {
-  transition: 2s ease-in-out;
-  position: absolute;
-  left: -100vw;
-  position: absolute;
-  background-color: var(--var-darkGray);
-  width: 100vw;
-  height: 100vh;
-  z-index: 400;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  flex-wrap: wrap;
-}
-
-.menuScreen h5{
-  text-align: center;
-  font-size: 5em;
-  text-transform: uppercase;
-}
-
-.menuScreenContent {
-  color: white;
-  width: 80vw;
-  height: 80vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* active class die het menu verplaats */
-
-.active {
-  left: 0;
-}
-
-/* de toggle button voor het menu */
-
-.menuButton {
-  position: fixed;
-  background-color: white;
-  height: fit-content;
-  width: fit-content;
-  right: 1vw;
-  top: 2vh;
-  z-index: 500;
-  border-radius: 11em;
-  font-size: 2em;
-  font-weight: 700;
-  cursor: pointer;
-  padding: 0.5em 1em 0.5em 1em;
-  box-shadow: rgb(149, 149, 149) 0em 0.1em 1em;
-}
-
-/* ---------------------------------------- */
-
-/* Project page layout */
-
-.projectPage {
-  background-color: white;
-  padding-top: 10em;
-}
-
-.projectPage article {
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: fit-content;
-}
-
-.projectPage p {
- text-align: start;
-}
-
-.projectPage h3, h4 {
-  text-align: center;
-}
-
-.buttonContainer {
-  height: 20vh;
-  width: fit-content;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.buttonContainer .button {
-  background-color: var(--var-orange) ;
-  z-index: 100;
-  height: fit-content;
-  width: fit-content;
-  padding: 1em;
-  border-radius: 10em;
-  box-shadow: var(--var-orange) 0em 0.1em 1em;
-  transition: 2s;
-  margin: 0em 1em;
-  color: white;
-}
-
-.buttonContainer .button:hover {
-  transform: scale(1.2);
-}
-
-.projectPage .image-container-project:first-of-type {
-  aspect-ratio: 2/1;
-  margin: 3em 0em;
-}
- 
-.projectPage .image-container-project {
-  width: 100vw;
-  height: fit-content;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 3em 0em 0em 0em;
-  background-color: var(--var-darkGray);
-}
-
-.projectPage article .image-container-project img {
-  width: 100vw;
-  height: fit-content;
-}
-
-.projectPage video {
-  width: 80vw;
-  height: auto;
-}
-
-#spookyOnepager, #BeeldtaalPoster {
-  height: auto;
-  width: 60vw;
-}
-
-#afstuderen {
-  width: 100vw;
-}
-
-embed, iframe {
-  width: 80vw;
-  height: 80vh;
-}
-
-iframe {
-  width: 80vw;
-  height: 80vh;
-}
-
-.image-container-project-afstuderen {
-  display: flex;
-}
-
-.image-container-project-afstuderen embed {
-  width: 33vw;
 }

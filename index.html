@@ -5,15 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" type="text/css" href="./styles/styles.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
 </head>
 <body>
     <main>
-        <h1>
-            <a href="index.html">
+        <div id="top"></div>
+        <a class="homeButton" href="index.html">
+            <h1>
                 Sam Lansdaal
-            </a>
-        </h1>
-        <div id="menuButton" class="menuButton">|</div>
+            </h1>
+        </a>
+
+        <div id="menuButton" class="menuButton">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+
         <div id="menuScreen" class="menuScreen">
             <div class="menuScreenContent">
                 <h5>Menu</h5>
@@ -61,6 +77,19 @@
                             Beeldtaal
                         </li>
                     </a>
+
+                    <a href="Afstuderen.html">
+                        <li>
+                            Game Over?
+                        </li>
+                    </a>
+
+                    <a href="Eenzaam.html">
+                        <li>
+                            Eenzaam
+                        </li>
+                    </a>
+
                 </ul>
             </div>
         </div>
@@ -114,28 +143,26 @@
             </a>
             
             <a href="Afstuderen.html" class="image-container">
-                <!-- <img src="images/test3.jpg" alt="Your Image"> -->
-                <video src="./videos/Afstuderen.mp4" type="video/mp4" autoplay muted>
+                <img src="./images/Afstuderen/Cover.png" alt="Your Image">
 
-                </video>
                 <div class="overlay">
-                    <h2>Project</h2>
+                    <h2>Game Over?</h2>
                 </div>
             </a>
 
-            <a href="project1.html" class="image-container">
-                <img src="images/test4.jpg" alt="Your Image">
+            <a href="Eenzaam.html" class="image-container">
+                <img src="./images/Eenzaam/Tile.png" alt="Your Image">
                 
                 <div class="overlay">
-                    <h2>Project</h2>
+                    <h2>Eenzaam</h2>
                 </div>
             </a>
 
-            <a href="project1.html" class="image-container">
-                <img src="images/test.jpg" alt="Your Image">
+            <a href="Jim_en_Johan.html" class="image-container">
+                <img src="./images/Jim_en_Johan/cover.png" alt="Your Image">
                 
                 <div class="overlay">
-                    <h2>Project</h2>
+                    <h2>Storytelling: Jim en Johan</h2>
                 </div>
             </a>
             
@@ -168,7 +195,9 @@
         </section>
     </main>
    <footer>
-    Back to top
+        <a href="#top">
+            Back to top
+        </a>
    </footer>
 
 

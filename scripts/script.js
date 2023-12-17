@@ -21,4 +21,5 @@ menuButton.onclick = openMenu
 
 function openMenu() {
     menuScreen.classList.toggle("active");
+    menuButton.classList.toggle('change');
 }
