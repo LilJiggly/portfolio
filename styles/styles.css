@@ -11,12 +11,9 @@
 
 html {
   scroll-behavior: smooth;
-  font-family: sofia-pro, sans-serif;
-}
-
-body {
-  font-family: Sofia Pro;
-  font-size: 1em;
+  font-family: sofia pro, sans-serif;
+  font-style: normal;
+  font-weight: 100;
 }
 
 a, a:hover, a:active, a:visited {
@@ -104,6 +101,11 @@ main .homeButton:hover {
   text-decoration: none;
 }
 
+.mobileMenuButton {
+  display: none;
+  position: fixed;
+}
+
 main > button {
   background-color: rgb(229, 229, 229);
   position: fixed;
@@ -133,7 +135,7 @@ main button h2 {
 section {
   flex-wrap: wrap;
   display: flex;
-  width: 100vw;
+  width: 100%;
   background-color: rgb(23, 23, 23);
 }
 
@@ -145,7 +147,7 @@ section {
   position: absolute;
   left: -100vw;
   background-color: var(--var-darkGray);
-  width: 100vw;
+  width: 0%;
   height: 100vh;
   z-index: 400;
   display: flex;
@@ -175,6 +177,7 @@ section {
 .active {
   left: 0;
   position: fixed;
+  width: 100%;
 }
 
 /* de toggle button voor het menu */
@@ -199,6 +202,12 @@ section {
   box-shadow: rgb(149, 149, 149) 0em 0.1em 1em;
 }
 
+.menuButton:hover > .bar1,
+.menuButton:hover > .bar2,
+.menuButton:hover > .bar3 {
+  background-color: var(--var-orange);
+}
+
 .bar1,
 .bar2,
 .bar3 {
@@ -206,12 +215,12 @@ section {
     height: 30%;
     background-color: #333;
     margin: 0.1em 0;
-    transition: 0.4s;
+    transition: 1s;
 }
 
 .change .bar1 {
     -webkit-transform: rotate(-45deg) translate(-6px, 6px);
-    transform: rotate(-45deg) translate(-6px, 6px);
+    transform: rotate(-45deg) translate(-8px, 8px);
 }
 
 .change .bar2 {
@@ -220,7 +229,7 @@ section {
 
 .change .bar3 {
     -webkit-transform: rotate(45deg) translate(-6px, -6px);
-    transform: rotate(45deg) translate(-6px, -6px);
+    transform: rotate(45deg) translate(-8px, -8px);
 }
 
 /* ---------------------------------------- */
@@ -229,7 +238,7 @@ section {
 
 .projectPage {
   background-color: white;
-  padding-top: 10em;
+  padding-top: 8em;
   overflow: hidden;
 }
 
@@ -462,7 +471,7 @@ footer a:hover {
 
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 460px) {
   .image-container {
     width: 100%;
   }
@@ -472,19 +481,21 @@ footer a:hover {
   }
 
   .menuButton {
-    display: flex;
-    height: 0.06em;
-    width: 0.06em;
+    display: none;
   }
 
-  .bar1,
-  .bar2,
-  .bar3 {
-    width: 10em;
-    height: 1em;
-    background-color: #333;
-    margin-top: 0.01em;
-    transition: 0.4s;
+  .mobileMenuButton {
+    display: block;
+    position: fixed;
+    background-color: white;
+    padding: 0.5em 1em 0.5em 1em;
+    border-radius: 10em;
+    background-color: white;
+    box-shadow: rgb(149, 149, 149) 0em 0.1em 1em;
+    bottom: 2vh;
+    cursor: pointer;
+    z-index: 500;
+    font-weight: 700;
   }
 
   h2 {

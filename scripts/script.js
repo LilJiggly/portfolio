@@ -15,9 +15,11 @@ console.log('ik ben gelinkt')
 
 
 var menuButton = document.getElementById("menuButton")
+var mobileMenuButton = document.getElementById("mobileMenuButton")
 var menuScreen = document.getElementById("menuScreen")
 
 menuButton.onclick = openMenu
+mobileMenuButton.onclick = openMenu
 
 function openMenu() {
     menuScreen.classList.toggle("active");
